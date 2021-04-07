@@ -5,6 +5,8 @@
 # Postman Integration
 Postman Integration is an extension to generate **Postman Collection fomat json file**.
 
+This fork will check the requests for an X-Amz-Target header and automatically set the request name based on the AWS API method. It will also check if the request contains the string "arn:" and, if so, it will set the folder name to "Contains ARN".
+
 # Usage
 
 * It's very easy. You can open Postman Integration window from context menu "Export as Postman Collection" on history tab. Multiple selection is OK!. Then  set up the followings on the window.

@@ -246,6 +246,20 @@ public class PostmanFrame extends JFrame implements MouseMotionListener, MouseLi
 			String method = iReqInfo.getMethod();
 			String url = getURL(reqRes);
 
+			//AWS-Specific Change by RickO
+			String folder = "Default";
+			String body = new String(reqRes.getRequest());
+			String[] lines = body.split("\r\n");
+			for (int loop = 0; loop < lines.length; loop++) {
+				if (lines[loop].startsWith("X-Amz-Target")) {
+					name = lines[loop].split(" ")[1].split("\\.")[1];
+				} else if (lines[loop].contains("arn:")) {
+					folder = "Contains ARN";
+				}
+			}
+			this.tableModel.setValueAt(folder, i, PostmanTableModel.FOLDER_NAME_INDEX);
+			// End AWS Changes
+
 			/* set value on table */
 			this.tableModel.setValueAt(name, i, PostmanTableModel.NAME_COLUMN_INDEX);
 			this.tableModel.setValueAt(method, i, PostmanTableModel.METHOD_COLUMN_INDEX);
