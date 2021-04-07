@@ -5,7 +5,7 @@
 # Postman Integration
 Postman Integration is an extension to generate **Postman Collection fomat json file**.
 
-This fork will check the requests for an X-Amz-Target header and automatically set the request name based on the AWS API method. It will also check if the request contains the string "arn:" and, if so, it will set the folder name to "Contains ARN".
+This fork will check the requests for an X-Amz-Target header and automatically set the request name based on the AWS API method. It will also check if the request contains the string "arn:" and, if so, it will set the folder name to "Contains ARN". JAR file is in build/libs/postman-integration-1.2.jar
 
 # Usage
 
